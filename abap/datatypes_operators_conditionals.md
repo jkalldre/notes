@@ -6,6 +6,7 @@ DATA [variable_name] TYPE [data_type].
 DATA first_name TYPE string.
 ```
 ABAP Data Types
+
 |Data Type|Initial Field Length|Valid Field Length|Initial Value| Meaning|
 |---------|-------------------|-------------------|-------------|--------|
 |Numeric|
