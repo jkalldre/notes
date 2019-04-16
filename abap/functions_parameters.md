@@ -22,9 +22,9 @@ Source: https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapmethods_g
 * Example: If a function has several optional parameters and the function func( a ) is called, the parameter /a/ will be assigned to the preferred parameter.
 ```ABAP
 FUNCTION example
-    IMPORTING p1 TYPE I DEFUALT 123,
-    IMPORTING p2 TYPE string OPTIONAL,
-    IMPORTING p3 TYPE i OPTIONAL,
+    IMPORTING p1 TYPE I DEFUALT 123
+    IMPORTING p2 TYPE string OPTIONAL
+    IMPORTING p3 TYPE i OPTIONAL
     PREFERRED PARAMETER p3.
 ...
 ENDFUNCTION.
