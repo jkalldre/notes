@@ -1,3 +1,4 @@
+Credit: https://github.com/abramsba/AbapExamples/wiki/ABAP-Structures-&-Tables
 
 ABAP structures, whether or not they're created in a data dictionary or locally in a program, are similar to `structures` in other languages. Likewise for table types created in the data dictionary, they're just `arrays`.
 
