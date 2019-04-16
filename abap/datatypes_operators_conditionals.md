@@ -34,20 +34,20 @@ Control Statements
 "If (logical expression == exp below)
 IF [not] exp [ and/or [not] exp ].
 ...
-[ELSEIF exp.
-...]
-[ELSE.
-...]
+ [ELSEIF exp.
+ ...]
+ [ELSE.
+ ...]
 ENDIF.
 
 "Case
 CASE case_variable_name.
-WHEN value_1.
-...
-WHEN value_2.
-...
-[WHEN OTHERS.
-...]
+ WHEN value_1.
+ ...
+ WHEN value_2.
+ ...
+ [WHEN OTHERS.
+ ...]
 ENDCASE.
 DO.
 
