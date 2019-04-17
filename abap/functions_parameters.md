@@ -110,7 +110,24 @@ IF method() eq 'X'.
 ...
 
 ```
-### Changing //TODO
+
+### Changing 
+* Changing is a way to pass a variable into a method by reference instead of value. Like exporting it is used to get multiple variables back from a method or function.
+```ABAP
+FUNCTION example
+        CHANGING p1 TYPE I.
+  p1 = 456.
+
+START-OF-SELECTION.
+DATA tmp TYPE I.
+tmp = 123
+WRITE:/ tmp. " prints 123
+
+CALL FUNCTION 'example'
+        CHANGING p1 = tmp.
+WRITE:/ tmp. " prints 456.
+
+```
 ### Raising //TODO
 ### Exceptions //TODO
 
