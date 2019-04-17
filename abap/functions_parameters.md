@@ -12,6 +12,56 @@ Source: https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapmethods_g
     * Exceptions
 
 * These parameter "prefixes" determine how the function/method will interact with the given variable. 
+* When calling a method that has more than one parameter you must explicity assign each actual parameter is assigned to which formal parameter.
+* If only one parameter present then the actual parameter can be provided without the formal, and it will be assigned to the only, or preferred parameter.
+* Calling a function requires the special "CALL FUNCTION" syntax and parameters must be explicitly assigned.
+```ABAP
+FUNCTION example1
+        IMPORTING p1 TYPE 1.
+...
+ENDFUNCTION. "example
+
+"call example1
+CALL FUNCTION 'example1'
+        EXPORTING p1 = 123.
+```
+```ABAP
+"Class example
+CLASS tester DEFINITION.
+        CLASS-METHODS: oneimport
+                          IMPORTING p1 TYPE I,
+                       twoimport
+                          IMPORTING p1 TYPE I
+                                    p2 TYPE I,
+                       changing_exporting_param
+                          IMPORTING p1 TYPE I
+                          CHANGING  p2 TYPE I.
+ENDCLASS.
+
+CLASS tester IMPLEMENTATION.
+        method oneimport.
+        ...
+        endmethod. "oneimport
+        method twoimport.
+        ...
+        endmethod. "twoimport
+        method changing_exporting_param.
+        ...
+        endmethod. "changing_exporting_param
+ENDCLASS. "tester
+
+START-OF-SELECTION.
+        DATA: tmp TYPE I. "for third example
+        "no formal parameter needed since one param is given and is an import
+        tester=>oneimport( 123 ).
+        "because both parameters are imports, no parameter type is needed but formal parameter is req.
+        tester=>twoimport( p1 = 123    
+                           p2 = 456 ). 
+        "Because not all of the parameters are imports, the parameter type is now required explicitly.
+        tester=>changing_exporting_param( EXPORTING p1 = 123
+                                          CHANGING  p2 = tmp ).
+```
+
 ### Importing
 ```ABAP 
 ... IMPORTING parameter TYPE [type].
