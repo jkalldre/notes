@@ -1,3 +1,5 @@
+Sources: https://www.tutorialspoint.com/sap_abap/sap_abap_inheritance.htm
+
 Classes need both a definition and an implementation in ABAP.
 
 ## Definition
@@ -52,4 +54,40 @@ CLASS sample IMPLEMENTATION.
         "constructor functionality
     ENDMETHOD.
 ENDCLASS. "sample
+```
+## Inheritance
+* This allows a child (or subclass) to borrow (inherit) methods and/or member variables from a parent (superclass) to avoid redundant
+coding.
+
+```ABAP
+CLASS Parent Definition.
+PUBLIC Section.
+Data: w_public(25) Value 'This is public data'.
+Methods: ParentM.
+ENDCLASS.
+
+CLASS Child Definition Inheriting From Parent.
+PUBLIC Section.
+Methods: ChildM.
+ENDCLASS.
+
+CLASS Parent Implementation.
+Method ParentM.
+Write: w_public.
+EndMethod. ENDCLASS.
+
+CLASS Child Implementation.
+Method ChildM.
+Skip.
+Write: 'Method in child class',
+        / w_public.
+EndMethod.
+ENDCLASS.
+
+Start-of-selection.
+Data: Parent Type Ref To Parent,
+      Child  Type Ref To Child.
+Create Object: Parent, Child.
+Call Method: Parent->ParentM,
+             child->ChildM.
 ```
