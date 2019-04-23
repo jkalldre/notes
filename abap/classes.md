@@ -24,11 +24,32 @@ CLASS cl_example IMPLEMENTATION.
     METHOD get_variable.
         r_variable = variable.
     ENDMETHOD. "get_variable
+    
     METHOD set_variable.
         variable = setter_variable.
     ENDMETHOD. "set_variable
+    
     METHOD get_class_id.
         r_class_id = class_id.
     ENDMETHOD. "get_class_id
 ENDCLASS. "Implementation
+```
+
+## Constructors
+* Constructors in ABAP function as they would in any other OO programming language. To define a constructor
+you simply need to name a method "constructor" and give it an implementation. When the object is created, the
+constructor is called.
+
+```ABAP
+CLASS sample DEFINITION.
+    PUBLIC SECTION.
+        METHODS: constructor.
+                "optional parameters
+ENDCLASS. "sample
+
+CLASS sample IMPLEMENTATION.
+    METHOD constructor.
+        "constructor functionality
+    ENDMETHOD.
+ENDCLASS. "sample
 ```
