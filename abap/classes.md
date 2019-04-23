@@ -90,4 +90,9 @@ Data: Parent Type Ref To Parent,
 Create Object: Parent, Child.
 Call Method: Parent->ParentM,
              child->ChildM.
+             
+"Outputs:
+" This is public data.
+" Method in child class.
+" This is public data.
 ```
