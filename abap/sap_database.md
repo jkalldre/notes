@@ -24,6 +24,7 @@ entry-dob = '01/01/1990'.
 INSERT INTO [nameOfTable] VALUES entry.
 ```
 * The updated table would look like this.
+
 |MANDT|ID|SURNAME|GIVENAME|DOB|
 |-----|--|-------|--------|---|
 | 100|1|DOE|JANE| 01/01/1990|
