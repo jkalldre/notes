@@ -1,9 +1,9 @@
 Sources: https://www.youtube.com/watch?v=9NGDFx98bvM
 
 ## Selection Screen
-•	A selection screen is one of the four types of user dialogs.
-•	The selection screens are designed whenever input is required fro mth euser.
-•	Both single value input or complex value input can be provided using selection screens.
+* A selection screen is one of the four types of user dialogs.
+* The selection screens are designed whenever input is required fro mth euser.
+* Both single value input or complex value input can be provided using selection screens.
 
 ```ABAP
 "Syntax for declaring parameters.
