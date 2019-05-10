@@ -30,5 +30,13 @@ INSERT INTO [nameOfTable] VALUES entry.
 | 100|1|DOE|JANE| 01/01/1990|
 
 ## Update
+* Updating an entry can be done in a similar manner to inserting following the syntax:
+```ABAP
+MODIFY [table_name] FROM [workarea].
+```
 
 ## Drop
+* Deleting just follows Open SQL syntax:
+```ABAP
+DELETE FROM [table_name] WHERE [field_name] = [some_value].
+```
